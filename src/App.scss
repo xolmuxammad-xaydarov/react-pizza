@@ -14,34 +14,3 @@
   height: 1px;
   background-color: #f7f7f7;
 }
-
-.nav__block{
-  margin-top: 40px;
-  .nav__panel{
-    max-width: 830px;
-  }
-
-  .types__list{
-    display: flex;
-    justify-content: space-between;
-  }
-  li{
-    padding: 15px 22px;
-    background-color: #f9f9f9;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    letter-spacing: 0.015em;
-    color: #2C2C2C;
-    cursor: pointer;
-  }
-  .active{
-    background-color: #2C2C2C;
-
-  a{
-    color: #fff;
-  }
-  }
-}

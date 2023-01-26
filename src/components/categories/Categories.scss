@@ -1,0 +1,136 @@
+// categories block
+.content-top{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__block{
+
+  .nav__panel{
+    max-width: 830px;
+  }
+  .types__list{
+    display: flex;
+    justify-content: space-between;
+  }
+  .active{
+    background-color: #2C2C2C;
+    color: #fff;
+  }
+  li{
+    background-color: #f9f9f9;
+    padding: 13px 30px;
+    border-radius: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  li:hover{
+      transition:0.3s;
+      background-color: #e2e2e2;
+  }
+}
+
+// sort block
+
+.sort{
+  position: relative;
+  .sort__label{
+    display: flex;
+    align-items: center;
+
+  svg{
+    margin-right: 8px;
+  }
+  b{
+    margin-right: 8px;
+  }
+  span{
+    color: #fe5f1e;
+    border-bottom: 1px dashed #fe5f1e;
+    cursor: pointer;
+  }
+}
+  .sort__popup{
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 9%);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 160px;
+
+    li{
+      padding: 12px 20px;
+      cursor: pointer;
+    }
+    .active{
+      font-weight: bold;
+      color: #fe5f1e;
+    }
+  }
+}
+
+.main-content{
+  margin-top: 32px;
+  
+  .choosen__category{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+  }
+
+  .cards{
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card{
+    width: 280px;
+    text-align: center;
+    margin-right: 35px;
+    margin-bottom: 65px;
+
+    .card__selector{
+      display: flex;
+      flex-direction: column;
+      background-color: #f3f3f3;
+      border-radius: 10px;
+      padding: 6px; 
+      margin-top: 22px; 
+
+      .pizza__type{
+        padding: 8px;
+        flex: 1;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .active{
+        background: #ffffff;
+        box-shadow: 0px 2px 4px rgb(0 0 0 / 4%);
+        border-radius: 5px;
+        cursor: auto;
+      }
+      ul{
+        display: flex;
+        li{
+          flex: 1;
+          padding: 8px;
+        }
+      }
+    }
+  }
+  .card__title{
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+}
