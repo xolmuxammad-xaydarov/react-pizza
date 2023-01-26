@@ -17,6 +17,9 @@ export default function Header() {
                 </div>
               </div>
             </a>
+            <div className="input__search">
+              <input type="text" placeholder='search pizza' />
+            </div>
           <div className='trolley__block'>
             <button className='trolley__btn'>
               <span className='all_price'>520 ₽ </span>
