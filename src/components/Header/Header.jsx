@@ -23,7 +23,10 @@ export default function Header() {
           <div className='trolley__block'>
             <button className='trolley__btn'>
               <span className='all_price'>520 ₽ </span>
-              <span className='trolley__img'><img src={trolley} alt="" /> 3</span>
+              <span className='trolley__img'>
+                <img src={trolley} alt="" />
+                <span>3</span>
+              </span>
             </button>
           </div>
         </div>

@@ -37,6 +37,7 @@
     align-items: center;
     position: relative;
     cursor: pointer;
+    font-size: 15px;
 
   ::after{
           content: '';
@@ -53,6 +54,11 @@
     .trolley__img{
       display: flex;
       align-items: center;
+      padding-left: 16px;
+
+      span{
+        // margin-top: 5px;
+      }
 
       img{
         padding-right: 10px;
