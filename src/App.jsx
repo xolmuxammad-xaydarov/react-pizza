@@ -1,16 +1,15 @@
-import Categories from './components/categories/Categories';
-import Header from './components/Header/Header';
+import Header from './components/Header/Header'
+import Home from './pages/Home'
 
 function App() {
   return (
     <div className="padding">
       <div className="App">
         <Header />
-        <div className="line" />
-        <Categories />
+        <Home />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

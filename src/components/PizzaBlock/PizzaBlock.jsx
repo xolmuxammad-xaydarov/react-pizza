@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import chikenPizza from '../../assets/images/chizbur-pizza.png'
 
 export default function PizzaBlock({ price, title, imageUrl, sizes, types }) {
   const pizzaTypes = ['тонкое', 'традиционное']
   const [activeType, setActiveType] = useState(0)
   const [activeSize,setActiveSize] = useState(0)
+  
   return (
     <div className="card">
       <img src={imageUrl} alt="" width={250} />
