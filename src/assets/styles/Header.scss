@@ -39,6 +39,17 @@
     cursor: pointer;
     font-size: 15px;
 
+    @media screen and (max-width:580px) {
+      width: 150px;
+      padding: 16px 0;
+      text-align: center;
+
+      .all_price{
+        padding-right: 10px;
+        padding-left: 20px;
+      }
+    }
+
     ::after {
       content: '';
       position: absolute;

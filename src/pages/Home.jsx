@@ -22,7 +22,6 @@ export default function Home() {
 
   return (
     <>
-      <div className="line" />
       <div className="container">
         <div className="content-top">
           <Categories />
@@ -32,7 +31,7 @@ export default function Home() {
           <div className="choosen__category">Все пиццы</div>
           <div className="cards">
             {isLoading
-              ? [...new Array(6)].map((_, i) => <Skeleton />)
+              ? [...new Array(6)].map((_, i) => <Skeleton key={i} />)
               : item && item.map((pizza, i) => <PizzaBlock key={i} {...pizza} />)}
           </div>
         </div>

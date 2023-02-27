@@ -4,32 +4,65 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
 
-  .nav__panel {
-    max-width: 830px;
+  @media screen and (max-width: 1240px) {
+    flex-direction: column;
 
-    .types__list {
-      display: flex;
-      justify-content: space-between;
-    }
-    .active {
-      background-color: #2c2c2c;
-      color: #fff;
-    }
-    li {
-      background-color: #f9f9f9;
-      padding: 13px 30px;
-      border-radius: 30px;
-      margin-right: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .non-active:hover {
-      transition: 0.3s;
-      background-color: #e2e2e2;
+    .sort {
+      margin-top: 30px;
+
+      &__label {
+        justify-content: end;
+      }
     }
   }
+}
+
+.nav__panel {
+  max-width: 830px;
+
+  .types__list {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 970px) {
+      max-width: 700px;
+      overflow: auto;
+    }
+    @media screen and (max-width: 820px) {
+      max-width: 500px;
+      overflow: auto;
+    }
+    @media screen and (max-width: 570px) {
+      max-width: 400px;
+      overflow: auto;
+
+        li{
+          padding: 8px 15px;
+        }
+    }
+    @media screen and (max-width: 470px) {
+      max-width: 300px;
+      overflow: auto;
+    }
+  }
+  .active {
+    background-color: #2c2c2c;
+    color: #fff;
+  }
+  li {
+    background-color: #f9f9f9;
+    padding: 13px 30px;
+    border-radius: 30px;
+    margin-right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .non-active:hover {
+    transition: 0.3s;
+    background-color: #e2e2e2;
+  }
+}
 
 // sort block
 
@@ -86,18 +119,32 @@
 
   .cards {
     margin-top: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 2fr);
+    grid-column-gap: 22px;
+    grid-row-gap: 10px;
+
+    .pizza-block__center {
+      display: flex;
+      justify-content: center;
+    }
+    @media screen and (max-width: 1390px) {
+      grid-template-columns: repeat(3, 2fr);
+    }
+    @media screen and (max-width: 1040px) {
+      grid-template-columns: repeat(2, 2fr);
+    }
+    @media screen and (max-width: 730px) {
+      grid-template-columns: repeat(1, 2fr);
+    }
   }
   .card {
     width: 280px;
     text-align: center;
-    margin-right: 35px;
     margin-bottom: 65px;
 
-    &:hover{
+    &:hover {
       transition: 0.5s;
       box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.05);
     }
@@ -116,7 +163,7 @@
         cursor: pointer;
         font-weight: 600;
         font-size: 14px;
-        padding-left:0px;
+        padding-left: 0px;
       }
       .active {
         background: #ffffff;

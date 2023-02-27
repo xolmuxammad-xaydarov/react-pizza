@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import trolley from '../../assets/images/trolley.svg';
 
@@ -7,7 +8,7 @@ export default function Header() {
     <div className="header">
       <div className="container">
         <div className="flex__header">
-          <a href="#">
+          <Link to="/">
             <div className="logo-block">
               <img src={logo} alt="" />
               <div className="logo__name">
@@ -15,18 +16,18 @@ export default function Header() {
                 <p>самая вкусная пицца во вселенной</p>
               </div>
             </div>
-          </a>
+          </Link>
           {/* <div className="input__search">
             <input type="text" placeholder="search pizza" />
           </div> */}
           <div className="trolley__block">
-            <button className="trolley__btn">
+            <Link to="/cart" className="trolley__btn">
               <span className="all_price">520 ₽ </span>
               <span className="trolley__img">
                 <img src={trolley} alt="" />
                 <span className='much'>3</span>
               </span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
