@@ -1,13 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { PushContext } from "../../pages/Home";
 
-export default function Categories({onChangeCategory}) {
-  const [activeNav, setActiveNav] = useState(0)
-
-  const changeNum = (num) => {
-    setActiveNav(num)
-    onChangeCategory(num)
-  }
-
+export default function Categories() {
+  const {categoryId, onClickCategory} = useContext(PushContext)
   const navList = ['Все', 'Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые']
   return (
     <nav className="nav__panel">
@@ -16,8 +11,8 @@ export default function Categories({onChangeCategory}) {
           navList.map((item, i) => (
             <li
               key={i}
-              onClick={() => changeNum(i)}
-              className={activeNav === i ? 'active' : 'non-active'}>
+              onClick={() => onClickCategory(i)}
+              className={categoryId === i ? 'active' : 'non-active'}>
               {item}
             </li>
           ))}

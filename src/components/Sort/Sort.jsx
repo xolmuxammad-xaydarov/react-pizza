@@ -1,6 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { PushContext } from '../../pages/Home'
+
 export default function Sort() {
+  const {sortType, onClickType} = useContext(PushContext)
+
   const [open, setOpen] = useState(false)
+  const types = [
+    { name: 'попопулярности +', sortProperty: 'rating' },
+    { name: 'попопулярности -', sortProperty: '-rating' },
+    { name: 'цене +', sortProperty: 'price' },
+    { name: 'цене -', sortProperty: '-price' },
+    { name: 'алфавиту +', sortProperty: 'title' },
+    { name: 'алфавиту -', sortProperty: '-title' },
+  ]
 
   return (
     <div>
@@ -18,15 +30,21 @@ export default function Sort() {
             />
           </svg>
           <b>Сортировка по:</b>
-          <span>популярности</span>
+          <span>{sortType.name}</span>
         </div>
 
         {open && (
           <div className="sort__popup">
             <ul>
-              <li className="active">популярности</li>
-              <li>цене</li>
-              <li>алфавиту</li>
+              {types &&
+                types.map((item, i) => (
+                  <li
+                    key={i}
+                    onClick={() => [onClickType(item), setOpen(false)]}
+                    className={item.sortProperty === sortType.sortProperty ? 'active' : ''}>
+                    {item.name}
+                  </li>
+                ))}
             </ul>
           </div>
         )}
