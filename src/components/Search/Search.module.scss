@@ -1,0 +1,34 @@
+.input__search {
+  width: 400px;
+  position: relative;
+
+  input {
+    border: 1px solid #a7a6a6;
+    outline: none;
+    padding: 8px 0 8px 35px;
+    width: 250px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+  .search_icon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 4px;
+    left: 4px;
+    opacity: 0.5;
+  }
+  .icon_x {
+    position: absolute;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    opacity: 0.5;
+    right: 130px;
+    top: 11px;
+  }
+  .icon_x:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+  }
+}

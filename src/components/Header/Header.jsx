@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.svg';
 import trolley from '../../assets/images/trolley.svg';
+import Search from '../Search';
 
-export default function Header() {
+export default function Header({value, setSearch}) {
+
   return (
     <div className="header">
       <div className="container">
@@ -17,9 +19,7 @@ export default function Header() {
               </div>
             </div>
           </Link>
-          {/* <div className="input__search">
-            <input type="text" placeholder="search pizza" />
-          </div> */}
+          <Search searchValue={value} setSearch={setSearch}/>
           <div className="trolley__block">
             <Link to="/cart" className="trolley__btn">
               <span className="all_price">520 ₽ </span>

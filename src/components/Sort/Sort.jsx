@@ -1,8 +1,6 @@
-import React, { useState, useContext } from 'react'
-import { PushContext } from '../../pages/Home'
+import React, { useState } from 'react'
 
-export default function Sort() {
-  const {sortType, onClickType} = useContext(PushContext)
+export default function Sort({value, onClickType}) {
 
   const [open, setOpen] = useState(false)
   const types = [
@@ -30,7 +28,7 @@ export default function Sort() {
             />
           </svg>
           <b>Сортировка по:</b>
-          <span>{sortType.name}</span>
+          <span>{value.name}</span>
         </div>
 
         {open && (
@@ -41,7 +39,7 @@ export default function Sort() {
                   <li
                     key={i}
                     onClick={() => [onClickType(item), setOpen(false)]}
-                    className={item.sortProperty === sortType.sortProperty ? 'active' : ''}>
+                    className={item.sortProperty === value.sortProperty ? 'active' : ''}>
                     {item.name}
                   </li>
                 ))}
