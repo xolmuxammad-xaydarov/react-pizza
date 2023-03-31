@@ -8,6 +8,7 @@ import Sort from '../components/Sort/Sort'
 import Skeleton from '../components/PizzaBlock/Skeleton'
 import PizzaBlock from '../components/PizzaBlock/PizzaBlock'
 import Pagination from '../components/pagination'
+import axios from 'axios'
 
 export default function Home({ searchValue }) {
   const categoryId = useSelector((state) => state.filter.categoryId)
@@ -16,7 +17,6 @@ export default function Home({ searchValue }) {
   const [item, setItem] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
-  console.log(currentPage);
   const [sortType, setSortType] = useState({
     name: 'попопулярнлсти',
     sortProperty: 'rating',
@@ -29,14 +29,16 @@ export default function Home({ searchValue }) {
     const search = searchValue ? `@search=${searchValue}` : ''
     const sortBy = sortType.sortProperty.replace('-', '')
     const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc'
-    fetch(
-      `https://6360ef4baf66cc87dc1e2fca.mockapi.io/items?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}${search}`,
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setItem(data)
-        setIsLoading(false)
-      })
+ 
+    axios
+    .get(`https://6360ef4baf66cc87dc1e2fca.mockapi.io/items?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}${search}`)
+    .then(res => {
+      setItem(res.data)
+      setIsLoading(false)
+    })
+    .catch(e => {
+      console.log(e)
+    })
   }, [categoryId, sortType,searchValue, currentPage])
 
   const onChangeCategory = (id) => {
